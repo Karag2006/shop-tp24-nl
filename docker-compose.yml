@@ -3,7 +3,7 @@ version: '3'
 services:
   shop:
     container_name: shop-tp24-nl
-    image: dockware/flex:latest
+    image: dockware/play:latest
     ports:
       - "3003:80"     # apache2
     volumes:
