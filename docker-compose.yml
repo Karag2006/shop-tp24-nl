@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+<<<<<<< HEAD
 ###> shopware/core ###
   database:
     image: mysql:${MYSQL_VERSION:-8}-oracle
@@ -34,3 +35,25 @@ volumes:
 ###> shopware/elasticsearch ###
   opensearch-data:
 ###< shopware/elasticsearch ###
+=======
+  shop:
+    container_name: shop-tp24-nl
+    image: dockware/play:latest
+    ports:
+      - "3003:80"     # apache2
+    volumes:
+      - "./src/custom/plugins:/var/www/html/custom/plugins"
+    networks:
+      - web
+    environment:
+      - XDEBUG_ENABLED=0  
+      - FILEBEAT_ENABLED=0
+
+
+## ***********************************************************************
+##  NETWORKS
+## ***********************************************************************
+networks:
+  web:
+    external: false
+>>>>>>> old
